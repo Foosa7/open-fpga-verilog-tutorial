@@ -21,33 +21,33 @@ sudo dnf install make automake gcc gcc-c++ kernel-devel clang bison \
 Note: All tools will be installed relative to /usr/local
 
 ## Installing the IceStorm Tools (icepack, icebox, iceprog, icetime, chip databases):
-
+```
 git clone https://github.com/YosysHQ/icestorm.git icestorm
 cd icestorm
 make -j$(nproc)
 sudo make install
-
+```
 ## Installing Arachne-PNR (place&route tool, predecessor to NextPNR):
-
+```
 git clone https://github.com/cseed/arachne-pnr.git arachne-pnr
 cd arachne-pnr
 make -j$(nproc)
 sudo make install
-
+```
 ## Installing NextPNR (place&route tool, Arachne-PNR replacement):
-
+```
 git clone https://github.com/YosysHQ/nextpnr nextpnr
 cd nextpnr
 cmake -DARCH=ice40 -DCMAKE_INSTALL_PREFIX=/usr/local .
 make -j$(nproc)
 sudo make install
-
+```
 ## Installing Yosys (Verilog synthesis):
-
+```
 git clone https://github.com/YosysHQ/yosys.git yosys
 cd yosys
 make -j$(nproc)
 sudo make install
-
+```
 Both place and route tools (Arachne-PNR & NextPNR) convert the IceStorm text chip databases into the respective PNR binary chip databases during build. Always rebuild the PNR tools after updating your IceStorm installation.
 
