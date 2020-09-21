@@ -1,27 +1,28 @@
-## Descripción
-Componente "hola mundo" con un pin de salida que siempre está a '1'.
-Al cargarlo en la iCEstick se enciende el led D1
+## Description
 
-## Simulación
+Component "hello world" with an output pin that is always at '1'.
+When charging it on the iCEstick, led D1 lights up
 
-Para realizar la simulacion entrar en el directorio y ejecutar:
+## Simulation
 
-$ make sim
+To carry out the simulation enter the directory and execute:
+```
+make sim
+```
+Automatically icarus verilog will be invoked to do the compilation / simulation and gtkwave to see the result of the simulation graphically
 
-Automaticamente se invocará al icarus verilog para hacer la compilacion / simulación y al gtkwave para ver el resultado de la simulacion gráficamente
+## Synthesis
 
-## Síntesis
+To implement the design in the FPGA we execute the command:
+```
+make sint
+```
+We generate the file setbit.bin that contains the FPGA configuration so that our digital circuit is implemented.
 
-Para implementar el diseño en la FPGA ejecutamos el comando:
-
-$ make sint
-
-Se nos genera el fichero setbit.bin que contiene la conguración de la FPGA para que se nos implemente nuestro circuito digital.
-
-Lo descargamos en la fpga mediante el comando:
-
+We then download it to the fpga using the command:
+```
 sudo iceprog setbit.bin
-
+```
 
 
 
